@@ -15,7 +15,7 @@ html {
 }
 @media (max-width: 980px) {
   html {
-    font-size: calc(var(--font-base) - 12.5%);
+    font-size: calc(var(--font-base) - 15.5%);
   }
 }
 body,
@@ -53,6 +53,11 @@ body {
   align-items: center;
   font-family: "Lexend Deca", sans-serif;
 }
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+}
 
 .page {
   width: 100%;
@@ -60,12 +65,41 @@ body {
   grid-template-columns: 1fr 1fr;
   height: 100%;
 }
+@media (max-width: 1024px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .form-section {
   padding: 2rem 8rem 2rem 8rem;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .form-section {
+    padding: 2rem;
+    height: 100%;
+  }
+}
+.form-section .orna2 {
+  display: none;
+  position: absolute;
+  top: -32px;
+  right: -32px;
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: #2B4570;
 }
 .form-section .sub-text {
   margin-bottom: 4rem;
+}
+@media (max-width: 600px) {
+  .form-section .sub-text {
+    margin-bottom: 2.5rem;
+  }
 }
 .form-section .sub-text p {
   font-size: 1rem;
@@ -80,9 +114,7 @@ body {
 .form-section .main-text h2 {
   font-size: 3rem;
   font-weight: 500;
-}
-.form-section .form {
-  display: flex;
+  line-height: 100%;
 }
 .form-section .form .form-content {
   margin-top: 2rem;
@@ -103,13 +135,31 @@ body {
   padding: 0 0.5rem;
   left: 8px;
   font-size: 0.875rem;
+  transition: color 0.3s ease;
 }
 .form-section .form .form-content .input-box input {
   width: 100%;
-  padding: 18px;
+  padding: 1.125rem;
   border-radius: 4px;
   border: 1px solid #2B4570;
   outline: none;
+  transition: background 0.3s ease;
+}
+.form-section .form .form-content .btn-container {
+  display: flex;
+  margin-top: 2rem;
+}
+.form-section .form .form-content .btn-container button {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #2B4570;
+  color: #fff;
+  padding: 1.125rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .bg-section {
@@ -119,12 +169,29 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0 8rem;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .bg-section {
+    display: none;
+  }
+}
+.bg-section .orna {
+  position: absolute;
+  right: -128px;
+  top: -128px;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: white;
 }
 .bg-section .bg-title h1 {
   font-size: 4rem;
   line-height: 120%;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 5px;
 }
 .bg-section .img {
   overflow: hidden;
@@ -136,6 +203,18 @@ body {
   max-width: 450px;
 }
 
-#form-signin {
-  transform: translateX(-110vw);
+.valido span {
+  color: #149714 !important;
+}
+
+.invalido span {
+  color: #c0341b !important;
+}
+
+.valido input {
+  border: 1px solid #149714 !important;
+}
+
+.invalido input {
+  border: 1px solid #c0341b !important;
 }/*# sourceMappingURL=style.css.map */
